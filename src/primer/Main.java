@@ -1,15 +1,13 @@
 package primer;
 
-import java.util.Comparator;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
     }
 
     public static IntStream pseudoRandomStream(int seed) {
-        IntStream.of(seed)
+        return IntStream.of(seed)
                 .map(x -> {
                     for (int i = 0; i > -1; i++) {
                         if (i != 0) {
@@ -18,7 +16,7 @@ public class Main {
                     }
                     return x;
                 })
-        return IntStream.forEachOrdered(x ->mid(x));
+                .forEachOrdered(x ->mid(x));
     }
 
     public static int mid(int x) {
